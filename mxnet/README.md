@@ -9,6 +9,6 @@ singularity container for MXNET with GPU support.
 (Here I assume that the same nvidia driver/cuda have been installed in your host machine)
 and store the downloaded files and above scripts under the same folder.
 1. Run `sh build_container.sh` (assumes that you have sudo access) 
-1. The `.img` will be produced, which has all the dependencies for setting up caffe installed.
+1. The `.img` will be produced, which has MXNET installed.
 Simply run a shell inside the container with `singularity shell <path-to-img>`
 
