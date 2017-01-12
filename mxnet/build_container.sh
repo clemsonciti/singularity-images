@@ -1,4 +1,4 @@
-sudo rm -f ubuntu_mxnet.img
+sudo rm -f ubuntu_mxnet_gpu.img
 sudo singularity create ubuntu_mxnet_gpu.img
 sudo singularity expand --size 8192 ubuntu_mxnet_gpu.img
 sudo singularity bootstrap ubuntu_mxnet_gpu.img ubuntu.def
