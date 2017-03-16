@@ -12,6 +12,6 @@ cp -r -f --symbolic-link /usr/local/cuda-8.0/* /usr/local/cuda/
 tar xvf /mnt/cudnn-8.0-linux-x64-v5.1.tgz -C /usr/local
 
 driver_path=/usr/local/NVIDIA-Linux-x86_64-$driver_version
-echo "LD_LIBRARY_PATH=/usr/local/cuda/lib64:$driver_path:$LD_LIBRARY_PATH" >> /environment
+echo "LD_LIBRARY_PATH=/usr/local/cuda/lib64:$driver_path:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH" >> /environment
 echo "PATH=$driver_path:\$PATH" >> /environment
 echo "export PATH LD_LIBRARY_PATH" >> /environment
