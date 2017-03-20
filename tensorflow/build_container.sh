@@ -1,4 +1,4 @@
-sudo rm -f ubuntu_tensorflow.img
+sudo rm -f ubuntu_tensorflow_gpu.img
 sudo singularity create ubuntu_tensorflow_gpu.img
 sudo singularity expand --size 8192 ubuntu_tensorflow_gpu.img
 sudo singularity bootstrap ubuntu_tensorflow_gpu.img ubuntu.def
