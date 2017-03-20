@@ -1,4 +1,4 @@
-sudo rm -f ubuntu_caffe.img
+sudo rm -f ubuntu_caffe_gpu.img
 sudo singularity create ubuntu_caffe_gpu.img
 sudo singularity expand --size 8192 ubuntu_caffe_gpu.img
 sudo singularity bootstrap ubuntu_caffe_gpu.img ubuntu.def
