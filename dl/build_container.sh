@@ -7,6 +7,7 @@ sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img sh /mnt/install_caff
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img sh /mnt/install_caffe.sh
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img sh /mnt/install_digits.sh
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img sh /mnt/install_tensorflow.sh
+sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img sh /mnt/install_ipykernel.sh
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img mkdir /local_scratch
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img mkdir /scratch2
 sudo singularity exec -B `pwd`:/mnt -w ubuntu_caffe_gpu.img mkdir /software
