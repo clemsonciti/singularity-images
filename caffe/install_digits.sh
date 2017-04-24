@@ -6,3 +6,5 @@ cp /mnt/requirements.txt $DIGITS_ROOT/
 pip install -r $DIGITS_ROOT/requirements.txt
 pip install -e $DIGITS_ROOT
 echo "export DIGITS_JOBS_DIR=/home/\$USER/.digits_jobs" >> /environment
+
+pip install -U pip
