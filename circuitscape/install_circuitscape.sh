@@ -11,6 +11,6 @@ sudo pip install psutil
 sudo apt-get install -y python-wxgtk3.0
 sudo apt-get install -y python-pythoncard
 
-sudo pip install -U circuitscape
+sudo pip install circuitscape
 
 
