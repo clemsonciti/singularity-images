@@ -20,11 +20,12 @@ but something similar should work on other HPC clusters.
 ```
 $ module load singularity
 $ pbsdsh sleep 2 # ensures $TMPDIR creation on all nodes
-$ uniq $PBS_NODEFILE > hosts.txt
-$ export SINGULARITY="$(which singularity) exec --nv -B /etc/machine-id:/etc/machine-id openmpi.simg"
+$ cat $PBS_NODEFILE > hosts.txt
+$ SINGULARITY="$(which singularity) exec --nv -B /etc/machine-id:/etc/machine-id openmpi.simg"
 $ export OMPI_MCA_orte_launch_agent="${SINGULARITY} orted"
-$ export MPICC="${SINGULARITY} mpicc"
-$ export MPIRUN="${SINGULARITY} mpirun --hostfile hosts.txt"
+export OMPI_MCA_btl_openib_allow_ib=true
+$ MPICC="${SINGULARITY} mpicc"
+$ MPIRUN="${SINGULARITY} mpirun --hostfile hosts.txt"
 ```
 
 Now, you should be able to compile programs with `$MPICC`

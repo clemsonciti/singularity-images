@@ -1,5 +1,5 @@
 BootStrap: docker
-From: mellanox/ubuntu_mofed
+From: nvidia/cuda:9.0-devel-ubuntu16.04
 
 # OpenMPI version 4.0.0
 %post
@@ -9,14 +9,13 @@ From: mellanox/ubuntu_mofed
         hwloc \
         openssh-client \
         libibverbs-dev \
-        libnuma-dev \
         wget
     rm -rf /var/lib/apt/lists/*
 
 %post
     mkdir -p /tmp && wget -q --no-check-certificate -P /tmp https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.0.tar.bz2
     tar -x -f /tmp/openmpi-4.0.0.tar.bz2 -C /tmp -j
-    cd /tmp/openmpi-4.0.0 && ./configure --prefix=/usr/local/openmpi --disable-getpwuid --enable-orterun-prefix-by-default --with-verbs
+    cd /tmp/openmpi-4.0.0 && ./configure --prefix=/usr/local/openmpi --disable-getpwuid --enable-orterun-prefix-by-default --with-cuda --with-verbs
     make -j4
     make -j4 install
     rm -rf /tmp/openmpi-4.0.0.tar.bz2 /tmp/openmpi-4.0.0
